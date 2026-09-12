@@ -41,7 +41,7 @@ stage('SonarCloud Analysis') {
                 variable: 'SONAR_TOKEN'
             )
         ]) {
-            bat 'sonar'
+            bat 'sonar-scanner.bat'
         }
     }
 }
