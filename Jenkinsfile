@@ -33,10 +33,10 @@ pipeline {
                 bat 'npm audit || exit /b 0'
             }
         }
-        stage('Check SonarScanner') {
-        steps {
-            bat 'sonar-scanner --version'
-        }
+stage('Check SonarScanner') {
+    steps {
+        bat 'sonar --version'
+    }
 }
     }
 }
