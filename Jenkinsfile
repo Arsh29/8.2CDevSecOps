@@ -33,9 +33,16 @@ pipeline {
                 bat 'npm audit || exit /b 0'
             }
         }
-stage('Check SonarScanner') {
+stage('SonarCloud Analysis') {
     steps {
-        bat 'sonar --version'
+        withCredentials([
+            string(
+                credentialsId: 'SONAR_TOKEN',
+                variable: 'SONAR_TOKEN'
+            )
+        ]) {
+            bat 'sonar'
+        }
     }
 }
     }
